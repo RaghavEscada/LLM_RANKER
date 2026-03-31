@@ -2,8 +2,12 @@
 LLM_Ranker: Generative Engine Optimization (GEO) Analytical Framework
 
 ## Team Members
-- [Team Member 1 Name] – [Roll Number 1]
-- [Team Member 2 Name] – [Roll Number 2]
+| Roll Number | Name |
+|---|---|
+| 2023BCS0171 | Raghav Krishna M |
+| 2023BCD0003 | Nooh K |
+| 2023BCS0099 | Surya Narayana Ghosh |
+| 2023BCS0036 | Hariprasath Murugan |
 
 ## Problem Statement
 Generative Engine Optimization (GEO) is an emerging vector for determining brand visibility across LLM training sets and retrieval-augmented generation (RAG) endpoints. Traditional search engine optimization focuses on keyword matching, whereas GEO metrics evaluate semantic richness, contextual positioning, and authoritative linking. There is no standard framework to visualize or rank the positioning of large numbers of LLM startups in this new frontier.
@@ -73,8 +77,12 @@ npm run dev
 The Generative Engine Optimization (GEO) framework operates deterministically on a multi-dimensional front. By scoring and evaluating these weights through OLS regression, startups can tangibly identify missing signals (like AI readability) that prevent them from appearing fully in modern RAG-assisted search contexts.
 
 ## Contribution
-- **001 | [Team Member 1]**: Data preprocessing, initial visualization EDA, evaluation script generation.
-- **002 | [Team Member 2]**: Modeling component development, Dashboard App development, model integration, report writing.
+| Roll Number | Member | Contribution |
+|---|---|---|
+| 2023BCS0171 | Raghav Krishna M | Data preprocessing, EDA, Modeling (OLS regression, tier classification), App development, report writing |
+| 2023BCD0003 | Nooh K | Dataset curation, feature engineering, evaluation script, model performance analysis |
+| 2023BCS0099 | Surya Narayana Ghosh | Visualization generation (all charts), results organization, `results/` structure |
+| 2023BCS0036 | Hariprasath Murugan | Dashboard UI (Next.js), integration of R outputs into frontend, presentation slides |
 
 ## Presentation
 Slides for this project have been developed on Gamma and can be found via the following live address:
@@ -87,5 +95,6 @@ Slides for this project have been developed on Gamma and can be found via the fo
 
 ---
 
-*Repository Name: LLM_RANKER*
+*Repository Name: LLM_RANKER*  
+*Team Members: 2023BCS0171, 2023BCD0003, 2023BCS0099, 2023BCS0036*  
 *GitHub Link: [https://github.com/RaghavEscada/LLM_RANKER](https://github.com/RaghavEscada/LLM_RANKER)*
