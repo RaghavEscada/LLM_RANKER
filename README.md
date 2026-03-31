@@ -1,107 +1,91 @@
-![LLM Ranker Banner](assets/banner.png)
+# Project Title
+LLM_Ranker: Generative Engine Optimization (GEO) Analytical Framework
 
-# LLM_Ranker | GEO Analytical Dashboard
+## Team Members
+- [Team Member 1 Name] – [Roll Number 1]
+- [Team Member 2 Name] – [Roll Number 2]
 
-> [!NOTE]
-> **GEO (Generative Engine Optimization)** is a novel framework for measuring how effectively a brand or entity is represented in Large Language Model (LLM) training sets and retrieval contexts.
+## Problem Statement
+Generative Engine Optimization (GEO) is an emerging vector for determining brand visibility across LLM training sets and retrieval-augmented generation (RAG) endpoints. Traditional search engine optimization focuses on keyword matching, whereas GEO metrics evaluate semantic richness, contextual positioning, and authoritative linking. There is no standard framework to visualize or rank the positioning of large numbers of LLM startups in this new frontier.
 
-LLM_Ranker is a professional-grade analytical tool designed to score, rank, and visualize the "visibility" of 500+ LLM startups. Combining a robust **R-based statistical engine** with a high-performance **Next.js dashboard**, it provides real-time insights into market positioning through a weighted multi-dimensional model.
+## Objectives
+- Develop a robust, multi-dimensional weighted model to quantify the GEO score of 500 AI-focused startups.
+- Calculate and categorize startups into 'High', 'Medium', and 'Low' tier positionings based on decision boundaries.
+- Expose the statistical analysis via an interactive Next.js leaderboard dashboard for real-time visualization.
 
----
+## Dataset
+- **Dataset Name:** LLM Startup Dataset 500
+- **Source:** Proprietary / Synthetically Generated based on the Generative Engine Optimization framework.
+- **Number of observations:** 500
+- **Number of variables:** 9 (Company Name + 8 Core Features)
+- **Brief description of important attributes:**
+  - `content_quality` (20%): Semantic richness and informational value.
+  - `ai_readability` (20%): Parsability and structural parity for Large Language Models.
+  - `technical_seo` (15%): Schema, metadata, and crawlability signals.
+  - `brand_mentions` (15%): Frequency of citations across trusted datasets.
+  - `backlinks` (10%): Traditional web authority and trust signals.
+  - `semantic_depth` (10%): Topical coverage breadth.
+  - `faq_presence` (5%): Availability of machine-readable Q&A data.
+  - `authority_score` (5%): Domain-level trust.
 
-## 🏗 Full-Stack Architecture
+## Methodology
+- **Data preprocessing:** Feature normalization, column renaming for standard syntax structure.
+- **Exploratory analysis:** Summarization of the core distributions and extraction of pearson correlation coefficient matrices.
+- **Models used:** Weighted Linear OLS Regression to assign a single continuous dependent score (LLM_score), followed by threshold-based tier classification.
+- **Evaluation methods:** Evaluation of tier splits and r-squared statistics to assure the deterministic weighted outputs accurately represent the distributed features.
 
-The project implements a decoupled data pipeline, ensuring high-fidelity analysis and a fluid user experience.
+## Results
+The model successfully clustered and mapped all 500 startups, exposing distinct leaders and outliers against the multi-dimensional framework. The R-squared value confirms deterministic fidelity from the independent variables given the strict weight bindings, ensuring a purely analytical result table. 
+Full tabular outputs can be found in `results/tables/model_performance.csv` and `results/tables/ranked_companies.csv`.
 
-```mermaid
-graph TD
-    A[llm_startup_dataset_500.csv] --> B(ranking.R)
-    B -->|Statistical Analysis| C[OLS Regression]
-    B -->|Weighted Scoring| D[Ranked Entities]
-    B -->|Visual Analytics| E[frontend/public/charts/*.png]
-    
-    D -->|Export| F[frontend/public/ranked_companies.csv]
-    C -->|Stats Engine| G[frontend/public/stats.json]
-    
-    F & G & E --> H(Next.js Dashboard)
-    H --> I[Interactive Leaderboard]
-    H --> J[Model Registry]
-    H --> K[Visual Analytics Pane]
-```
+## Key Visualizations
+| Score Distribution | Feature Importance | Feature Correlation |
+| :---: | :---: | :---: |
+| ![Distribution](results/figures/score_distribution.png) | ![Importance](results/figures/feature_importance.png) | ![Correlation](results/figures/correlation_matrix.png) |
 
----
+## How to Run the Project
+**Repository Structure:**
+- `data/`: Contains the evaluation dataset and `.RData` runtime states.
+- `scripts/`: Ordered sequential R scripts for processing the data.
+- `results/figures/`: Generated correlation and distribution plots.
+- `results/tables/`: Generated evaluation tables and ranking outcomes.
+- `app/`: Next.js frontend reporting dashboard.
+- `presentation/`: Accompanied slide resources and links.
 
-## ⚖️ The GEO Scoring Model
-
-The ranking is driven by a **Weighted Linear OLS Regression** model implemented in R. Each entity is scored based on 8 core dimensions:
-
-| Dimension | Weight | Description |
-| :--- | :--- | :--- |
-| **Content Quality** | 20% | Semantic richness and informational value. |
-| **AI Readability** | 20% | Parsability and structural clarity for LLMs. |
-| **Technical SEO** | 15% | Schema, metadata, and crawlability signals. |
-| **Brand Mentions** | 15% | Frequency of citations across trusted datasets. |
-| **Backlinks** | 10% | Traditional web authority and trust signals. |
-| **Semantic Depth** | 10% | Topical coverage and specialized knowledge. |
-| **FAQ Presence** | 5% | Availability of machine-readable Q&A data. |
-| **Authority Score** | 5% | Domain-level credibility and historical trust. |
-
----
-
-## 📊 Visual Insights
-
-Our R engine generates high-fidelity visualizations to aid in data exploration:
-
-| Score Distribution | Feature Correlation |
-| :---: | :---: |
-| ![Distribution](frontend/public/charts/score_distribution.png) | ![Correlation](frontend/public/charts/correlation_matrix.png) |
-
-> [!TIP]
-> All charts are exported with a high-contrast dark theme optimized for professional dashboards and presentations.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-- **R** (with `ggplot2`, `ggcorrplot`, `scales`)
-- **Node.js** (v18+) & **npm**
-
-### Data Analysis (The Engine)
-Run the R script to process the dataset and generate the latest scores and charts:
+**Steps to reproduce the analysis:**
+1. Install required R packages by running: `Rscript requirements.R`
+2. Run the analytical stages sequentially from `scripts/`:
 ```bash
-Rscript ranking.R
+cd scripts
+Rscript 01_data_preparation.R
+Rscript 02_exploratory_analysis.R
+Rscript 03_modeling.R
+Rscript 04_evaluation.R
 ```
-
-### Dashboard (The UI)
-Navigate to the frontend directory and start the development server:
+3. *(Optional)* Navigate to the `app/` directory and host the visual dashboard locally:
 ```bash
-cd frontend
+cd app
 npm install
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to view the GEO Dashboard.
+
+## Conclusion
+The Generative Engine Optimization (GEO) framework operates deterministically on a multi-dimensional front. By scoring and evaluating these weights through OLS regression, startups can tangibly identify missing signals (like AI readability) that prevent them from appearing fully in modern RAG-assisted search contexts.
+
+## Contribution
+- **001 | [Team Member 1]**: Data preprocessing, initial visualization EDA, evaluation script generation.
+- **002 | [Team Member 2]**: Modeling component development, Dashboard App development, model integration, report writing.
+
+## Presentation
+Slides for this project have been developed on Gamma and can be found via the following live address:
+- [Generative Engine Optimization: Ranking Companies in the LLM Era](https://gamma.app/docs/Generative-Engine-OptimizationGEO-Ranking-Companies-in-the-LLM-Er-8e5n7yjtnfvlr3t?mode=present#card-fuc3cz52dshvl50)
+
+## References
+1. OLS Regression Model Architecture
+2. Generative Engine Optimization baseline methodology
+3. Gamma presentation framework
 
 ---
 
-## 📂 Repository Structure
-
-- `ranking.R`: Core analytical engine and visualization script.
-- `llm_startup_dataset_500.csv`: Raw input data.
-- `frontend/`: Next.js 16 + Tailwind CSS dashboard.
-  - `app/`: React components and layouts.
-  - `public/`: transient data registry (CSV, JSON, Charts).
-- `assets/`: high-resolution project assets and banners.
-
----
-
-## 📍 Future Roadmap
-
-- [ ] **K-Means Clustering**: Group startups by behavioral archetypes.
-- [ ] **GLM Integration**: Model tier probability shifts.
-- [ ] **Real-time API**: Integrate with live news feeds for dynamic ranking updates.
-- [ ] **PCA**: Principal Component Analysis for feature sensitivity.
-
----
-
-*Developed as a professional demonstration of R-JS data pipelines by Raghav.*
+*Repository Name: LLMRanker_[TEAM_ID]*
+*GitHub Link: [Link to GitHub Repository]*

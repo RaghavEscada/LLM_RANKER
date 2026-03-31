@@ -1,0 +1,10 @@
+"Feature","Estimate","P_Value"
+"(Intercept)",0.00170470490140466,0.356607113761174
+"content_quality",0.199992259273569,0
+"technical_seo",0.150001089740365,0
+"brand_mentions",0.149994591523949,0
+"ai_readability",0.200004720241182,0
+"backlinks",0.0999946066198284,0
+"semantic_depth",0.0999945166673113,0
+"faq_presence",0.0499919555994005,0
+"authority_score",0.0500016676961455,0
