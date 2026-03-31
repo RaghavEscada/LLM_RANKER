@@ -87,5 +87,5 @@ Slides for this project have been developed on Gamma and can be found via the fo
 
 ---
 
-*Repository Name: LLMRanker_[TEAM_ID]*
-*GitHub Link: [Link to GitHub Repository]*
+*Repository Name: LLM_RANKER*
+*GitHub Link: [https://github.com/RaghavEscada/LLM_RANKER](https://github.com/RaghavEscada/LLM_RANKER)*
